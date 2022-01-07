@@ -16,9 +16,8 @@ client.on("ready", () => {
     console.log('----------------------------------------------------------');
 });
 
-client.on("messageUpdate", (message, oldContent, newContent) => {
-    if(message.author.bot) return;
-    console.log("--> Message by " + message.author.tag + " edited in " + message.guild.name + " | " + oldContent + "-> " + newContent);
+client.on("messageUpdate", (oldMessage, newMessage) => {
+    console.log("--> Message by " + newMessage.author.tag + " edited in " + newMessage.guild.name + " | " + oldMessage.content + "-> " + newMessage.content);
     console.log("---------------");
 });
 
